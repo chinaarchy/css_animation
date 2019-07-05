@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson_2</title>
+    <style>
+        div{
+            margin-left: 50px;
+            margin-top: 50px;
+            display: flex;
+            justify-content: normal;
+            align-items: normal;
+            flex-direction: row;
+        }
+        div div{
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            background-color: #EEEEEE;
+            border: 0;
+        }
+        #box1{
+            transform: skew(20deg);
+            -ms-transform: skew(20deg);	/* IE 9 */
+            -webkit-transform: skew(20deg);	/* Safari 和 Chrome */
+            -o-transform: skew(20deg);	/* Opera */
+            -moz-transform: skew(20deg);	/* Firefox */
+        }
+        #box2{
+            transform: scaleX(0.5);
+            -ms-transform: scaleX(0.5);	/* IE 9 */
+            -webkit-transform: scaleX(0.5);	/* Safari 和 Chrome */
+            -o-transform: scaleX(0.5);	/* Opera */
+            -moz-transform: scaleX(0.5);	/* Firefox */
+        }
+        #box3{
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);		/* IE 9 */
+            -webkit-transform: rotate(45deg);	/* Safari and Chrome */
+            -o-transform: rotate(45deg);		/* Opera */
+            -moz-transform: rotate(45deg);		/* Firefox */
+        }
+        #box4 {
+            transform: translate(10px,20px);
+            -ms-transform: translate(10px,20px);		/* IE 9 */
+            -webkit-transform: translate(10px,20px);	/* Safari and Chrome */
+            -o-transform: translate(10px,20px);		/* Opera */
+            -moz-transform: translate(10px,20px);		/* Firefox */
+        }
+        #box5{
+            /*旋转、缩放、移动、倾斜*/
+            transform:scaleX(2) scaleY(2) rotate(45deg) translate(10px,20px) skew(20deg);
+            -ms-transform:scaleX(0.5) rotate(45deg) translate(10px,20px);		/* IE 9 */
+            -moz-transform:scaleX(0.5) rotate(45deg) translate(10px,20px);	/* Firefox */
+            -webkit-transform:scaleY(2) rotate(45deg) translate(10px,20px);	/* Safari and Chrome */
+            -o-transform:scaleX(0.5) rotate(45deg) translate(10px,20px);		/* Opera */
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div id="box0">box0</div>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+    <div id="box3">box3</div>
+    <div id="box4">box4</div>
+    <div id="box5">box5</div>
+</div>
+</body>
+</html>
