@@ -8,6 +8,11 @@
             position: relative;
             padding: 15px;
             text-align: center;
+            color: black;
+            -webkit-transition: color .75s ease-in-out;
+            -moz-transition: all .75s ease-in-out;
+            -o-transition: all .75s ease-in-out;
+            transition: all .75s ease-in-out;
         }
         button{
             width: 100px;
@@ -29,7 +34,6 @@
             flex-direction: column;
             align-items: center;
             margin: 0 auto;
-
         }
         .line{
             position: absolute;
@@ -43,25 +47,9 @@
             transform: scaleX(0);
             /*scaleX为缩放比例*/
             z-index: 1111;
-            animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+            transition-timing-function: cubic-bezier(0.25,0.1,0.25,1);
         }
 
-        @keyframes changeColor1{
-            from{
-                color: #000;
-            }
-            to{
-                color: #188FF7;
-            }
-        }
-        @keyframes changeColor2{
-            from{
-                color: #188FF7;
-            }
-            to{
-                color: #000;
-            }
-        }
     </style>
 </head>
 <body>
@@ -80,13 +68,11 @@
         let count = 0;
         let styles = {
             transform:["scaleX(1)", "scaleX(0)"],
-            animation:["changeColor1 1s","changeColor2 1s"],
             color:["#188FF7", "#000"]
         };
         btn.onclick = function () {
             let i = count%2;
             line.style.transform = styles.transform[i];
-            h2.style.animation = styles.animation[i];
             h2.style.color = styles.color[i];
             count++;
         }
