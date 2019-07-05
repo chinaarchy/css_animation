@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 1</title>
+    <style>
+        h2{
+            position: relative;
+            padding: 15px;
+            text-align: center;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            border-radius: 15px;
+            border: none;
+            background: #188FF7;
+            color: black;
+            outline: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover{
+            background: deepskyblue;
+        }
+        .container{
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 auto;
+
+        }
+        .line{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 100%;
+            transition: transform .5s;
+            background: #188FF7;
+            color: #188FF7;
+            transform: scaleX(0);
+            /*scaleX为缩放比例*/
+            z-index: 1111;
+            animation-timing-function: cubic-bezier(0.25,0.1,0.25,1);
+        }
+
+        @keyframes changeColor1{
+            from{
+                color: #000;
+            }
+            to{
+                color: #188FF7;
+            }
+        }
+        @keyframes changeColor2{
+            from{
+                color: #188FF7;
+            }
+            to{
+                color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 id="title">
+        前端学院
+        <i class="line" id="line"></i>
+    </h2>
+    <button id="change">切换样式</button>
+</div>
+<script>
+    (function () {
+        let btn = document.getElementById('change');
+        let h2 = document.getElementById('title');
+        let line = document.getElementById('line');
+        let count = 0;
+        let styles = {
+            transform:["scaleX(1)", "scaleX(0)"],
+            animation:["changeColor1 1s","changeColor2 1s"],
+            color:["#188FF7", "#000"]
+        };
+        btn.onclick = function () {
+            let i = count%2;
+            line.style.transform = styles.transform[i];
+            h2.style.animation = styles.animation[i];
+            h2.style.color = styles.color[i];
+            count++;
+        }
+    })();
+</script>
+</body>
+</html>
