@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson_4</title>
+    <style>
+        .img-wrap {
+            position: absolute;
+        }
+        .img-wrap .img {
+            position: absolute;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            transition: transform 1.5s;
+        }
+        .back{
+            transform: rotateY(-180deg);
+        }
+
+        .img-wrap:hover .font{
+            transform: rotateY(180deg);
+        }
+
+        .img-wrap:hover .back{
+            transform: rotateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="img-wrap">
+        <img class="img font" src="../asset/正面.jpg" alt="正面">
+        <img class="img back" src="../asset/反面.jpg" alt="反面">
+    </div>
+</body>
+</html>
